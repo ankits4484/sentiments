@@ -1,4 +1,4 @@
-import pickle
+import joblib
 from nltk.stem import WordNetLemmatizer
 import streamlit as st
 import nltk
@@ -12,7 +12,7 @@ def lemma(text):
     lemmatized = [lemmatizer.lemmatize(w,'v') for w in text.split()]
     return lemmatized
 
-pipe = pickle.load(open("logistic_model.pkl","rb"))
+pipe = joblib.load(open("logistic_model.pkl","rb"))
 
 st.title("Movie review  sentiments analysis")
 
